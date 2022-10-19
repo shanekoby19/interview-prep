@@ -1,0 +1,18 @@
+What is JSX?
+- JSX stands for Javascript XML, it is a markup language that allows you to write Javascript alongside your HTML.
+- It's also syntactic sugar, under the hood react is calling React.createElement() to create the javascript.
+
+Why is classname used instead of class.
+- Class is a reserved word in javascript, when your code is being transformed by Babel the Javascript engine would think
+- you were trying to create a class and not give an element a class name.
+
+Describe the data flow in React.
+- The data flow in React is unidirection, it flows from parent to child.
+
+How would you delay an API call until a component is mounted?
+- Class based - componentDidMount() 
+- Functional Components with hooks - useEffect(() => []) - Dependancy arrays
+
+Should you use && or ternary operator?
+- Ternary operator - if && is present only the left side of a falsy operation will be evaluted. Could return 
+- and possibly render 0 or undefined
