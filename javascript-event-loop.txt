@@ -1,0 +1,26 @@
+What are some of the components of NodeJS
+- V8 for our Javascript engine
+- LibUV for asyncronous actions like the event-loop and threads.
+
+What are threads and the thread pool?
+NodeJS Process 
+    - Instant of the NodeJS application
+    - Single Threaded
+    - Do not block the thread!
+    - Top level code executed -> Modules required --> Register callbacks
+
+Thread Pool 
+    - Additional 4 threads that are completely seperate from the main thread.
+    - Event loop will offload expensive tasks to the thread pool. (asyncronous events)
+
+What is the event loop?
+    - A place where all the application code that is inside a callback function is ran. (Non-top-level code)
+    - Asyncronous code emits an event when it's done executing and the event loop will come to pick up that code and execute the callback function.
+
+Event Loop Phases
+    - Expired Timer callbacks - Executes the callback functions when there events are emitted.
+    - I//O Polling and callbacks - File access and networking APIs
+    - setImmediate callbacks - Special timer fires immediately after I/O Polling
+    - Close callbacks - 
+    - Other microtasks queue & process.nextick - execute after each phase of the event loop.
+        - Includes resolved promises.
