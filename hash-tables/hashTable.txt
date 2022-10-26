@@ -1,0 +1,9 @@
+- A great resource to have when trying to decrease the space-time complexity of a problem.
+- Key lookup values that simplify how you view the data.
+- Very similar to an array
+    - Array you find your value based on an offset in memory (index) "array[index]"
+    - In a hash table you will find your value based on a key.
+    - Lookup of the key to value is typically constant O(1) but can grow to O(n) if the implementation is bad.
+
+- Secret sauce - the lookup function.
+ 
