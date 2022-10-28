@@ -55,19 +55,25 @@ const { trace } = require("console");
 //////////////////// TWO SUMS PROBLEM /////////////////////////
 /**
  * Returns the index of the two elements that sum to a particular target.
+ * // [2, 7, 11, 15] with target 9 should produce [0, 1]
  */
 const twoSums = (numsArray, target) => {
     const table = {};
     const indexes = [];
-    
+
+    // Store each complement and it's index into a hashtable.
     numsArray.forEach((num, index) => {
-        table[num] = target - num;
+        table[target - num] = index;
     });
 
-    console.log(table);
+    // Pull out all the complements into an array of numbers.
+    const complements = Object.keys(table).map(str => parseInt(str));
 
-    numsArray.forEach(num => {
-        
+    // Loop through the original array and return the two numbers if they sum to the target.
+    numsArray.forEach((num, index) => {
+        if(complements.includes(num) && indexes.length === 0 && index !== table[num]) {
+            indexes.push(index, table[num])
+        }
     })
 
     return indexes;
@@ -76,4 +82,12 @@ const twoSums = (numsArray, target) => {
 const nums = [2, 7, 11, 15];
 const target = 9;
 
+const nums2 = [3, 2, 4];
+const target2 = 6;
+
+const nums3 = [-1, 0];
+const target3 = -1
+
 console.log(twoSums(nums, target));
+console.log(twoSums(nums2, target2));
+console.log(twoSums(nums3, target3));
