@@ -9,6 +9,8 @@
 //     id: 13, name: 'Shane'
 // }];
 
+const { trace } = require("console");
+
 // const favoriteThings = [{
 //     id: 13, name: 'Playstation',
 // }, {
@@ -49,3 +51,29 @@
 // const dups = findDuplicates(nums);
 
 // console.log(dups);
+
+//////////////////// TWO SUMS PROBLEM /////////////////////////
+/**
+ * Returns the index of the two elements that sum to a particular target.
+ */
+const twoSums = (numsArray, target) => {
+    const table = {};
+    const indexes = [];
+    
+    numsArray.forEach((num, index) => {
+        table[num] = target - num;
+    });
+
+    console.log(table);
+
+    numsArray.forEach(num => {
+        
+    })
+
+    return indexes;
+}
+
+const nums = [2, 7, 11, 15];
+const target = 9;
+
+console.log(twoSums(nums, target));
